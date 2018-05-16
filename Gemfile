@@ -14,6 +14,7 @@ gem 'puma', '~> 3.11'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem "twitter-bootstrap-rails"
 gem "devise-bootstrap-views"
+gem "font-awesome-rails"
 gem 'sass-rails', '~> 5.0'
 gem 'therubyracer'
 gem "stock_quote", '~> 2.0.0'
