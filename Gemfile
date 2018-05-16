@@ -11,6 +11,7 @@ gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
+gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem "twitter-bootstrap-rails"
 gem "devise-bootstrap-views"
 gem 'sass-rails', '~> 5.0'

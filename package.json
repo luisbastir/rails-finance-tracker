@@ -1,5 +1,4 @@
 {
   "name": "rails-finance-tracker",
-  "private": true,
-  "dependencies": {}
+  "private": true
 }
