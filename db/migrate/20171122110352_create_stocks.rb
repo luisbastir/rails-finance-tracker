@@ -1,7 +1,7 @@
-class CreateStocks < ActiveRecord::Migration[5.2]
+class CreateStocks < ActiveRecord::Migration[5.1]
   def change
     create_table :stocks do |t|
-      t.string :ticket
+      t.string :ticker
       t.string :name
       t.decimal :last_price
 

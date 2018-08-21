@@ -3,21 +3,23 @@
     <%= bootstrap_flash %>
   </div>
 <% end %>
+
 <% if @stock %>
   <div class="well results-block">
-    <strong>Symbol: </strong><%= @stock.ticket %>
-    <strong>Name: </strong><%= @stock.name %>
-    <strong>Price: </strong><%= @stock.last_price %>
-    <% if current_user.can_add_stock?(@stock.ticket) %>
-      <%= link_to "Add to my stocks", user_stocks_path(user: current_user, stock_ticker: @stock.ticket), class: "btn btn-xs btn-success", method: :post %>
+    <strong>Symbol: </strong> <%= @stock.ticker %>
+    <strong>Name: </strong> <%= @stock.name %>
+    <strong>Price: </strong> <%= @stock.last_price %>
+    <% if current_user.can_add_stock?(@stock.ticker) %>
+      <%= link_to "Add to my stocks", user_stocks_path(user: current_user, stock_ticker: @stock.ticker), 
+                                                    class: "btn btn-xs btn-success", method: :post %>
     <% else %>
       <span class="label label-default">
-        Stock cannot be added beacuse you have alredy added
+        Stock cannot be added because you already added
         <% if !current_user.under_stock_limit? %>
-          10 stocks
+        10 stocks
         <% end %>
-        <% if current_user.stock_alredy_added?(@stock.ticket) %>
-          this stock
+        <% if current_user.stock_already_added?(@stock.ticker) %>
+        this stock
         <% end %>
       </span>
     <% end %>
