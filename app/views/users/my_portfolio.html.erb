@@ -14,11 +14,25 @@
       </div>
     </div>
   </form>
-  <span class="badge">{{stock.symbol}}</span>
+  
+  <div id="stock-loopkup-status" class="results-block alert alert-success ng-hide" ng-show="stock.message">
+    {{stock.message}}
+  </div>
+  <div id="stock-lookup-errors" class="results-block alert alert-danger ng-hide" ng-show="stock.error">
+    {{stock.error}}
+  </div>
+
+  <div class="well results-block" id="stock-lookup-results" ng-show="stock.name != undefined">
+    <strong>Symbol: </strong> {{stock.symbol}}
+    <strong>Name: </strong> {{stock.name}}
+    <strong>Price: </strong> {{stock.last_price}}
+    <button ng-click="add()" class="btn btn-xs btn-success" ng-show="stock.can_be_added">Add to my stocks</button>
+    <span class="label label-default"></span>
+  </div>
+
 </div>
-<div id="results">
-  <%= render 'result' %>
+<div id="stock-list">
+  <%= render 'stocks/list' %>
 </div>
-<%= render 'stocks/list' %>
 
 
